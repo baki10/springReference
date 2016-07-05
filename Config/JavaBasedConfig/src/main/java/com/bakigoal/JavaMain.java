@@ -2,6 +2,7 @@ package com.bakigoal;
 
 import com.bakigoal.config.AppConfig;
 import com.bakigoal.model.Movie;
+import com.bakigoal.service.DataSourceService;
 import com.bakigoal.service.MovieService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,13 +11,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class JavaMain {
   public static void main(String[] args) {
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-    context.register(AppConfig.class);
-//    context.scan("com.bakigoal.dao");
-    context.refresh();
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
     MovieService movieService = context.getBean(MovieService.class);
     printUsers(movieService, "!!! MovieDao: !!!");
+
+    DataSourceService dataSourceService = context.getBean(DataSourceService.class);
+    System.out.println(dataSourceService);
 
     context.registerShutdownHook();
   }

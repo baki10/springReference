@@ -1,4 +1,4 @@
 dependencies {
-    compile project(":logging")
+//    compile project(":logging")
     compile("org.springframework:spring-context:4.3.1.RELEASE")
 }
