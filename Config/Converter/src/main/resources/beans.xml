@@ -10,5 +10,12 @@
 
     <context:component-scan base-package="com.bakigoal"/>
 
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean"/>
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <!--adding custom converter to basic spring framework converters-->
+                <bean class="com.bakigoal.converter.DateToLongConverter"/>
+            </set>
+        </property>
+    </bean>
 </beans>
