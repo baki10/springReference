@@ -3,4 +3,7 @@ include 'logging'
 include 'Config:XmlBasedConfig'
 include 'Config:JavaBasedConfig'
 include 'Config:AnnotationBasedConfig'
+include 'Converter'
+include 'Config:Converter'
+findProject(':Config:Converter')?.name = 'Converter'
 
