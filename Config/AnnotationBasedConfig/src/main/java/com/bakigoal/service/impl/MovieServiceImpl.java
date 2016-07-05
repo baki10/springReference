@@ -4,10 +4,8 @@ import com.bakigoal.dao.MovieDao;
 import com.bakigoal.model.Movie;
 import com.bakigoal.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

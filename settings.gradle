@@ -1,6 +1,6 @@
 rootProject.name = 'springReference'
-include 'XmlBasedConfig'
 include 'logging'
-include 'AnnotationBasedConfig'
-include 'JavaBasedConfig'
+include 'Config:XmlBasedConfig'
+include 'Config:JavaBasedConfig'
+include 'Config:AnnotationBasedConfig'
 

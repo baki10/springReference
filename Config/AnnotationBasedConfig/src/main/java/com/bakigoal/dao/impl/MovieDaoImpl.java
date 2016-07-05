@@ -3,7 +3,6 @@ package com.bakigoal.dao.impl;
 import com.bakigoal.dao.MovieDao;
 import com.bakigoal.model.Movie;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
