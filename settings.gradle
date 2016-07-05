@@ -1,4 +1,5 @@
 rootProject.name = 'springReference'
 include 'iocContainer'
 include 'logging'
+include 'AnnotationBasedConfig'
 
