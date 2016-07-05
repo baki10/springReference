@@ -11,7 +11,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class JavaMain {
   public static void main(String[] args) {
-    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+    context.register(AppConfig.class);
+//    setProfile(context,Profile.DEV);
+    context.refresh();
 
     MovieService movieService = context.getBean(MovieService.class);
     printUsers(movieService, "!!! MovieDao: !!!");
@@ -22,10 +25,30 @@ public class JavaMain {
     context.registerShutdownHook();
   }
 
+  private static void setProfile(AnnotationConfigApplicationContext context, Profile profile) {
+    switch (profile){
+      case DEV:
+        context.getEnvironment().setActiveProfiles("dev");
+        break;
+      case PRODUCTION:
+        context.getEnvironment().setActiveProfiles("production");
+        break;
+      default:
+        break;
+    }
+  }
+
   private static void printUsers(MovieService movieService, String caption) {
     System.out.println(caption);
     for (Movie movie : movieService.getMovies()) {
       System.out.println(movie);
     }
   }
+
+
+
+  enum Profile {
+    DEV, PRODUCTION
+  }
+
 }

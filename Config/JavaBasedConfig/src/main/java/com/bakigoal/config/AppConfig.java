@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.Profile;
 
 /**
  * Created by ilmir on 05.07.16.
@@ -23,7 +24,20 @@ public class AppConfig {
   private String password;
 
   @Bean
+  @Profile("default")
   public DataSourceService dataSource() {
     return new DataSourceService(url + "/" + username + "/" + password);
+  }
+
+  @Bean
+  @Profile("dev")
+  public DataSourceService devDataSource() {
+    return new DataSourceService("Development dataSource");
+  }
+
+  @Bean
+  @Profile("production")
+  public DataSourceService prodDataSource() {
+    return new DataSourceService("JNDI Production dataSource");
   }
 }

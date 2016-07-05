@@ -12,8 +12,8 @@ public class DataSourceService {
 
   @Override
   public String toString() {
-    return "=== DataSourceService {" +
+    return "\n=== DataSourceService {" +
         "name='" + name + '\'' +
-        " } ===";
+        " } ===\n";
   }
 }
