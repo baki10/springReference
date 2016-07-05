@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created by ilmir on 05.07.16.
  */
-public class Main {
+public class AnnotationMain {
   public static void main(String[] args) {
     ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"beans.xml"});
 

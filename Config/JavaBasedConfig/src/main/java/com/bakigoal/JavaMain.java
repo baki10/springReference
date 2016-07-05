@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Created by ilmir on 05.07.16.
  */
-public class Main {
+public class JavaMain {
   public static void main(String[] args) {
     ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
