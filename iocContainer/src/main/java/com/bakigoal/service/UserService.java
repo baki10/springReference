@@ -10,5 +10,11 @@ import java.util.List;
 public interface UserService {
   List<User> getUsers();
 
-  User findByFirstName(String name);
+  default void init() {
+    System.out.println("------ init ------" + this.getClass());
+  }
+
+  default void destroy() {
+    System.out.println("------ destroy ------" + this.getClass());
+  }
 }

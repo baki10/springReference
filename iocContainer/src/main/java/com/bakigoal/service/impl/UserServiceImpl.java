@@ -2,7 +2,6 @@ package com.bakigoal.service.impl;
 
 import com.bakigoal.model.User;
 import com.bakigoal.service.UserService;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,18 +27,5 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<User> getUsers() {
     return users;
-  }
-
-  @Override
-  public User findByFirstName(String name) {
-    if (name == null) {
-      return null;
-    }
-    for (User user : users) {
-      if (name.equals(user.getFirstName())) {
-        return user;
-      }
-    }
-    return null;
   }
 }

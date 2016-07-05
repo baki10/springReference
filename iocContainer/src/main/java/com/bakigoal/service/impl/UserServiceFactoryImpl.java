@@ -34,17 +34,4 @@ public class UserServiceFactoryImpl implements UserService {
   public List<User> getUsers() {
     return users;
   }
-
-  @Override
-  public User findByFirstName(String name) {
-    if (name == null) {
-      return null;
-    }
-    for (User user : users) {
-      if (name.equals(user.getFirstName())) {
-        return user;
-      }
-    }
-    return null;
-  }
 }
