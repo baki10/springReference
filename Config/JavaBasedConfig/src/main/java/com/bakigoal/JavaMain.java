@@ -13,7 +13,7 @@ public class JavaMain {
   public static void main(String[] args) {
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
     context.register(AppConfig.class);
-//    setProfile(context,Profile.DEV);
+    setProfile(context,Profile.DEV);
     context.refresh();
 
     MovieService movieService = context.getBean(MovieService.class);
