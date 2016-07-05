@@ -4,6 +4,7 @@ import com.bakigoal.dao.MovieDao;
 import com.bakigoal.model.Movie;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,9 @@ public class MovieDaoImpl implements MovieDao {
 
   private List<Movie> movies = new ArrayList<>();
 
-  public MovieDaoImpl() {
+  @PostConstruct
+  public void init() {
+    System.out.println("-------init dao-------");
     for (int i = 1; i < 4; i++) {
       Movie movie = new Movie();
       movie.setName("Name " + i);
