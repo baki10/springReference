@@ -4,4 +4,5 @@ include 'Config:XmlBasedConfig'
 include 'Config:JavaBasedConfig'
 include 'Config:AnnotationBasedConfig'
 include 'Config:Converter'
+include 'Aop'
 

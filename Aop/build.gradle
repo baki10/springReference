@@ -1,0 +1,11 @@
+dependencies {
+    //    Logging with SLF4J & LogBack
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.7'
+    //    Spring and Transactions
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.1.RELEASE'
+    compile group: 'org.springframework', name: 'spring-tx', version: '4.3.1.RELEASE'
+    //    AspectJ dependencies
+    compile group: 'org.aspectj', name: 'aspectjrt', version: '1.8.6'
+    compile group: 'org.aspectj', name: 'aspectjtools', version: '1.8.6'
+}
