@@ -13,6 +13,10 @@ public class AopMain {
     System.out.println(employeeService.getEmployee().getName());
     employeeService.getEmployee().setName("Ilmir");
 //    employeeService.getEmployee().throwException();
+    employeeService.getEmployee().setAge(28);
+
+    int age = employeeService.getEmployee().getAge();
+    System.out.println("\n after setAge(28); getAge() = " + age);
     ctx.close();
   }
 }
