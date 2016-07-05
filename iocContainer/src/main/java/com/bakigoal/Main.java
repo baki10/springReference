@@ -3,6 +3,7 @@ package com.bakigoal;
 import com.bakigoal.model.User;
 import com.bakigoal.service.UserService;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
   public static void main(String[] args) {
-    ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"services.xml"});
+    ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"services.xml"});
 
     UserService userService = context.getBean("userService", UserService.class);
     printUsers(userService, "!!! UserService: !!!");
@@ -20,6 +21,8 @@ public class Main {
 
     UserService userFactoryMethod = context.getBean("userFactoryMethod", UserService.class);
     printUsers(userFactoryMethod, "!!! FACTORY METHOD BEAN !!!");
+
+    context.registerShutdownHook();
   }
 
   private static void printUsers(UserService userService, String caption) {

@@ -5,7 +5,7 @@
                "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="userService" class="com.bakigoal.service.impl.UserServiceImpl"
-          init-method="init" destroy-method="destroy" scope="prototype"/>
+          init-method="init" destroy-method="destroy"/>
 
     <alias name="userService" alias="usersAlias"/>
 
