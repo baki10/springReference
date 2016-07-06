@@ -1,5 +1,24 @@
 apply plugin: 'war'
-apply plugin: 'jetty'
+apply plugin: 'org.akhikhl.gretty'
+
+//Gretty Embedded Jetty
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:+'
+    }
+}
+
+gretty {
+    port = 8080
+    contextPath = 'mvc'
+    servletContainer = 'jetty9'
+//    servletContainer = 'tomcat8' //tomcat7 or tomcat8
+}
+
 
 dependencies {
     compile project(":logging")
@@ -10,14 +29,6 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.7.5'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.5'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.7.5'
-}
+    compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version: '9.3.10.v20160621'
 
-jettyRun {
-    stopPort = 8084
-    stopKey = 'stopKey'
-}
-
-jettyStop {
-    stopPort = 8084
-    stopKey = 'stopKey'
 }
