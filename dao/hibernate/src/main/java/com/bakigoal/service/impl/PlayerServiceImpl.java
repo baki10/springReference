@@ -61,6 +61,6 @@ public class PlayerServiceImpl implements PlayerService {
     if (player == null) {
       return;
     }
-    playerDao.remove(player);
+    playerDao.remove(player.getId());
   }
 }
