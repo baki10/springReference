@@ -1,0 +1,20 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+jettyRun {
+    stopPort = 8084
+    stopKey = 'stopKey'
+}
+jettyStop {
+    stopPort = 8084
+    stopKey = 'stopKey'
+}
+
+dependencies {
+    compile project(":logging")
+    compile project(":dao:hibernate")
+    compile 'org.springframework:spring-webmvc:4.3.1.RELEASE'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'jstl:jstl:1.2'
+
+}
