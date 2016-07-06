@@ -1,0 +1,7 @@
+dependencies {
+    compile("org.springframework:spring-context:4.3.1.RELEASE")
+    compile("org.springframework:spring-orm:4.3.1.RELEASE")
+    compile group: 'org.postgresql', name: 'postgresql', version: '9.4.1208.jre7'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.1.Final'
+    compile("commons-dbcp:commons-dbcp:1.4")
+}
