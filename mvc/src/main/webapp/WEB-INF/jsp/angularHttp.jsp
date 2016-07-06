@@ -26,10 +26,17 @@
 
     <table>
         <caption>Table from database(as JSON objects)</caption>
+        <tr>
+            <th></th>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>NUMBER</th>
+        </tr>
         <tr ng-repeat="x in players | orderBy:'firstName'">
             <td>{{ $index + 1 }}</td>
             <td>{{ x.firstName }}</td>
             <td>{{ x.lastName | uppercase}}</td>
+            <td>{{ x.number }}</td>
         </tr>
     </table>
 
@@ -43,7 +50,7 @@
         });
     });
     app.controller('sqlController', function($scope, $http) {
-        $http.get("<c:url value="/rest/player" />").then(function(response) {
+        $http.get("<c:url value="/rest/players" />").then(function(response) {
             $scope.players = response.data;
         });
 
