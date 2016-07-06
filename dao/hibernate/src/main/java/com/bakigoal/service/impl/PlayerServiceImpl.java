@@ -1,4 +1,4 @@
-package com.bakigoal.dao.impl;
+package com.bakigoal.service.impl;
 
 import com.bakigoal.dao.SimpleDao;
 import com.bakigoal.dao.entity.Player;
