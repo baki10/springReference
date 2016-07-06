@@ -17,18 +17,21 @@ import java.util.List;
 @Transactional
 public class PlayerServiceImpl implements PlayerService {
 
-  @Autowired
   private SimpleDao playerDao;
+
+  @Autowired
+  public void setPlayerDao(SimpleDao playerDao) {
+    this.playerDao = playerDao;
+    playerDao.setEntityClass(Player.class);
+  }
 
   @Override
   public List<Player> getAll() {
-    playerDao.setEntityClass(Player.class);
     return playerDao.getAll();
   }
 
   @Override
   public Player getPlayerById(Long id) {
-    playerDao.setEntityClass(Player.class);
     return id == null ? null : (Player) playerDao.findById(id);
   }
 
@@ -37,28 +40,25 @@ public class PlayerServiceImpl implements PlayerService {
     if (player == null) {
       return null;
     }
-    playerDao.setEntityClass(Player.class);
     Serializable id = playerDao.save(player);
     return id == null ? null : (Player) playerDao.findById(id);
   }
 
   @Override
   public void updatePlayer(Player player) {
-    if(player == null){
+    if (player == null) {
       return;
     }
-    playerDao.setEntityClass(Player.class);
     playerDao.update(player);
   }
 
   @Override
   public void deletePlayer(Long id) {
-    if(id == null){
+    if (id == null) {
       return;
     }
-    playerDao.setEntityClass(Player.class);
     Player player = (Player) playerDao.findById(id);
-    if(player == null){
+    if (player == null) {
       return;
     }
     playerDao.remove(player);
