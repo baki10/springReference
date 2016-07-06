@@ -5,4 +5,6 @@ include 'Config:JavaBasedConfig'
 include 'Config:AnnotationBasedConfig'
 include 'Config:Converter'
 include 'Aop'
+include 'dao'
+include 'dao:jdbc'
 
