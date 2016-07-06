@@ -31,15 +31,15 @@ public class MyRestController {
     return playerService.getPlayerById(id);
   }
 
-  @RequestMapping(value= "/players", method = RequestMethod.POST)
+  @RequestMapping(value = "/players", method = RequestMethod.POST)
   public Player addPlayer(@RequestBody Player player) {
     return playerService.addPlayer(player);
   }
 
-  @RequestMapping(value="/players/{id}", method = RequestMethod.PUT )
+  @RequestMapping(value = "/players/{id}", method = RequestMethod.PUT)
   public Player updatePlayer(@RequestBody Player player, @PathVariable("id") Long id) {
     Player playerById = playerService.getPlayerById(id);
-    if(player == null || playerById == null){
+    if (player == null || playerById == null) {
       return null;
     }
     playerById.setFirstName(player.getFirstName());
@@ -49,7 +49,7 @@ public class MyRestController {
     return playerById;
   }
 
-  @RequestMapping(value="/players/{id}", method = RequestMethod.DELETE )
+  @RequestMapping(value = "/players/{id}", method = RequestMethod.DELETE)
   public void deletePlayer(@PathVariable("id") Long id) {
     playerService.deletePlayer(id);
   }
