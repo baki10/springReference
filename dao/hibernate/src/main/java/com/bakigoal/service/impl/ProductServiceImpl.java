@@ -33,6 +33,14 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   @Transactional
+  public void removeProduct(Product product) {
+    if (product != null) {
+      productDao.remove(product.getId());
+    }
+  }
+
+  @Override
+  @Transactional
   public void increasePriceOfAllProductsInCategory(final String category, BigDecimal delta) {
 
     List<Product> list = productDao.productsByCategory(category);
@@ -44,10 +52,5 @@ public class ProductServiceImpl implements ProductService {
         productDao.update(p);
       }
     });
-  }
-
-  @Override
-  public void doExtra(Product product) {
-    productDao.doSmthWithProduct(product);
   }
 }

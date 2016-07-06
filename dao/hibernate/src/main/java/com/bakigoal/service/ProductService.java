@@ -13,7 +13,7 @@ public interface ProductService {
 
   void addProduct(Product product);
 
-  void increasePriceOfAllProductsInCategory(final String category, BigDecimal delta);
+  void removeProduct(Product product);
 
-  void doExtra(Product product);
+  void increasePriceOfAllProductsInCategory(final String category, BigDecimal delta);
 }
