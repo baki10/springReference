@@ -1,0 +1,7 @@
+dependencies {
+//    compile project(":logging")
+    compile("org.springframework:spring-context:4.3.1.RELEASE")
+    compile("org.springframework:spring-oxm:4.3.1.RELEASE")
+    compile ("org.codehaus.castor:castor-xml:1.4.1")
+
+}

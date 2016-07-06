@@ -8,4 +8,5 @@ include 'Aop'
 include 'dao'
 include 'dao:jdbc'
 include 'dao:hibernate'
+include 'oxm'
 
