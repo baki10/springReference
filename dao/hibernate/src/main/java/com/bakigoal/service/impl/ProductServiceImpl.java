@@ -1,11 +1,8 @@
 package com.bakigoal.service.impl;
 
 import com.bakigoal.dao.ProductDao;
-import com.bakigoal.dao.SimpleDao;
 import com.bakigoal.dao.entity.Product;
 import com.bakigoal.service.ProductService;
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,9 +19,6 @@ public class ProductServiceImpl implements ProductService {
   @Autowired
   private ProductDao productDao;
 
-  @Autowired
-  private SimpleDao simpleDao;
-
   @Override
   @Transactional(readOnly = true)
   public List<Product> getProducts() {
@@ -40,11 +34,8 @@ public class ProductServiceImpl implements ProductService {
   @Override
   @Transactional
   public void increasePriceOfAllProductsInCategory(final String category, BigDecimal delta) {
-    //we can use universal simpleDao setting appropriate entity class
-    simpleDao.setEntityClass(Product.class);
-    Criteria criteria = simpleDao.createBaseCriteria();
-    criteria.add(Restrictions.eq("category", category));
-    List<Product> list = criteria.list();
+
+    List<Product> list = productDao.productsByCategory(category);
 
     list.stream().forEach(p -> {
       BigDecimal price = p.getPrice();

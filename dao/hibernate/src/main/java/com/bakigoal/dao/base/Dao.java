@@ -1,7 +1,5 @@
 package com.bakigoal.dao.base;
 
-import org.hibernate.Criteria;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -10,22 +8,20 @@ import java.util.List;
  */
 public interface Dao<E> {
 
-	List<E> getAll();
+  List<E> getAll();
 
-	E load(Serializable id);
+  E load(Serializable id);
 
-	E findById(Serializable id);
+  E findById(Serializable id);
 
-	void remove(Serializable id);
+  void remove(Serializable id);
 
-	void update(Object obj);
+  void update(Object obj);
 
-	Criteria createBaseCriteria();
+  void flush();
 
-	void flush();
+  Class<E> getType();
 
-	Class<E> getType();
-
-	Serializable save(Object obj);
+  Serializable save(Object obj);
 
 }

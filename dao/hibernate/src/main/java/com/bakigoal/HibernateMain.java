@@ -1,7 +1,6 @@
 package com.bakigoal;
 
 import com.bakigoal.dao.entity.Product;
-import com.bakigoal.model.Movie;
 import com.bakigoal.service.ProductService;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

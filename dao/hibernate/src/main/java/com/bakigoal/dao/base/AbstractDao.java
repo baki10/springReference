@@ -22,10 +22,6 @@ public abstract class AbstractDao {
     return sessionFactory.getCurrentSession();
   }
 
-  public void setSessionFactory(SessionFactory aSessionFactory) {
-    sessionFactory = aSessionFactory;
-  }
-
   public Serializable save(Object obj) {
     return getSession().save(obj);
   }
@@ -40,7 +36,7 @@ public abstract class AbstractDao {
 
 
   public <E> List<E> getAll(Class<E> persistentClass) {
-    return getSession().createCriteria(persistentClass).list();
+    return getSession().createQuery("from " + persistentClass.getSimpleName()).list();
   }
 
   public <E> E load(Class<E> entityClass, Serializable id) {
@@ -73,7 +69,7 @@ public abstract class AbstractDao {
   }
 
   public void flushAndClear() {
-    getSession().flush();
+    flush();
     clearSession();
   }
 }

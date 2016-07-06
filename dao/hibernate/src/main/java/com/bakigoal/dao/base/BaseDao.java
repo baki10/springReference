@@ -1,7 +1,5 @@
 package com.bakigoal.dao.base;
 
-import org.hibernate.Criteria;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -21,7 +19,7 @@ public class BaseDao<E extends Identified> extends AbstractDao implements Dao<E>
 
   @Override
   public List<E> getAll() {
-    return createBaseCriteria().list();
+    return getAll(entityClass);
   }
 
   @Override
@@ -41,11 +39,6 @@ public class BaseDao<E extends Identified> extends AbstractDao implements Dao<E>
 
   public void remove(E entity) {
     getSession().delete(entity);
-  }
-
-  @Override
-  public Criteria createBaseCriteria() {
-    return getSession().createCriteria(getType());
   }
 
   public Class<E> getType() {
