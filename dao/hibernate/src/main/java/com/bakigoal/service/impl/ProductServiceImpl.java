@@ -27,8 +27,10 @@ public class ProductServiceImpl implements ProductService {
 
   @Override
   @Transactional
-  public void addProduct(Product product) {
-    productDao.save(product);
+  public Product addProduct(Product product) {
+    Long id = (Long) productDao.save(product);
+    product.setId(id);
+    return product;
   }
 
   @Override
@@ -36,6 +38,14 @@ public class ProductServiceImpl implements ProductService {
   public void removeProduct(Product product) {
     if (product != null) {
       productDao.remove(product.getId());
+    }
+  }
+
+  @Override
+  @Transactional
+  public void removeProduct(Long id) {
+    if (id != null) {
+      productDao.remove(id);
     }
   }
 
@@ -52,5 +62,19 @@ public class ProductServiceImpl implements ProductService {
         productDao.update(p);
       }
     });
+  }
+
+  @Override
+  @Transactional
+  public Product getProductById(Long id) {
+    return id == null ? null : productDao.findById(id);
+  }
+
+  @Override
+  @Transactional
+  public void updateProduct(Product product) {
+    if (product != null) {
+      productDao.update(product);
+    }
   }
 }

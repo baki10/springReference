@@ -11,9 +11,15 @@ import java.util.List;
 public interface ProductService {
   List<Product> getProducts();
 
-  void addProduct(Product product);
+  Product addProduct(Product product);
 
   void removeProduct(Product product);
 
+  void removeProduct(Long id);
+
   void increasePriceOfAllProductsInCategory(final String category, BigDecimal delta);
+
+  Product getProductById(Long id);
+
+  void updateProduct(Product product);
 }

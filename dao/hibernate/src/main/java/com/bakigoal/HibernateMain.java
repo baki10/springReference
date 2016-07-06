@@ -23,7 +23,7 @@ public class HibernateMain {
     service.increasePriceOfAllProductsInCategory("odd", BigDecimal.TEN);
     printProducts(service.getProducts());
     System.out.println("removing products");
-    service.getProducts().stream().forEach(service::removeProduct);
+//    service.getProducts().stream().forEach(service::removeProduct);
     System.out.println("----------------------------------------------");
     printProducts(service.getProducts());
 
