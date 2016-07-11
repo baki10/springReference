@@ -38,6 +38,9 @@ ${message}
     <li>
         <a href="jspSample">jsp</a>
     </li>
+    <li>
+        <a href="send_mail">mail</a>
+    </li>
 </ul>
 </body>
 </html>

@@ -30,5 +30,7 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.7.5'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.7.5'
     compile group: 'org.eclipse.jetty', name: 'jetty-webapp', version: '9.3.10.v20160621'
+    compile group: 'com.sun.mail', name: 'javax.mail', version: '1.5.5'
+    compile group: 'org.springframework', name: 'spring-context-support', version: '3.2.0.RELEASE'
 
 }

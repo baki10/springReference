@@ -30,7 +30,7 @@
     <bean name="employeeXMLConfigAspect" class="com.bakigoal.spring.aspect.EmployeeXMLConfigAspect"/>
     <!-- Spring AOP XML Configuration -->
     <aop:config>
-        <aop:aspect ref="employeeXMLConfigAspect" id="employeeXMLConfigAspectID" order="1">
+        <aop:aspect ref="employeeXMLConfigAspect" id="employeeXMLConfigAspectID" message="1">
             <aop:pointcut expression="execution(* com.bakigoal.spring.model.Employee.getName())" id="getNamePointcut"/>
             <aop:around method="employeeAroundAdvice" pointcut-ref="getNamePointcut" arg-names="proceedingJoinPoint"/>
         </aop:aspect>
