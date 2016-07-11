@@ -8,6 +8,8 @@
                 http://www.springframework.org/schema/context
                 http://www.springframework.org/schema/context/spring-context.xsd">
 
+  <import resource="security-context.xml"/>
+
   <!--messages-->
   <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
     <property name="basename" value="messages"/>
