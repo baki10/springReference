@@ -11,42 +11,42 @@ public class AngularController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String main() {
-		return "angularMainPage";
+		return "angular/angularMainPage";
 	}
 
 	@RequestMapping(value = "/angular1", method = RequestMethod.GET)
 	public String basics() {
-		return "angularBasic";
+		return "angular/angularBasic";
 	}
 
 	@RequestMapping(value = "/angular2", method = RequestMethod.GET)
 	public String toDo() {
-		return "angularToDo";
+		return "angular/angularToDo";
 	}
 
 	@RequestMapping(value = "/angular3", method = RequestMethod.GET)
 	public String search() {
-		return "angularSearch";
+		return "angular/angularSearch";
 	}
 
 	@RequestMapping(value = "/angular4", method = RequestMethod.GET)
 	public String sort() {
-		return "angularSort";
+		return "angular/angularSort";
 	}
 
 	@RequestMapping(value = "/angular5", method = RequestMethod.GET)
 	public String time() {
-		return "angularTime";
+		return "angular/angularTime";
 	}
 
 	@RequestMapping(value = "/angular6", method = RequestMethod.GET)
 	public String http() {
-		return "angularHttp";
+		return "angular/angularHttp";
 	}
 
 	@RequestMapping(value = "/angular7", method = RequestMethod.GET)
 	public String rest() {
-		return "angularREST";
+		return "angular/angularREST";
 	}
 
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)

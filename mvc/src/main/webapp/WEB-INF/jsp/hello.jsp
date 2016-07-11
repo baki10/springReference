@@ -35,6 +35,9 @@ ${message}
     <li>
         <a href="errorPage404">404</a>
     </li>
+    <li>
+        <a href="jspSample">jsp</a>
+    </li>
 </ul>
 </body>
 </html>
