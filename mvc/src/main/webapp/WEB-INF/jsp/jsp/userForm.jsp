@@ -20,6 +20,11 @@
       <td><form:errors path="lastName" cssStyle="color: #ff0000;"/></td>
     </tr>
     <tr>
+      <td>Email:</td>
+      <td><form:input path="email" type="email"/></td>
+      <td><form:errors path="email" cssStyle="color: #ff0000;"/></td>
+    </tr>
+    <tr>
       <td>Sex:</td>
       <td>
           <%--<form:radiobuttons path="sex" items="${sexOptions}"/>--%>

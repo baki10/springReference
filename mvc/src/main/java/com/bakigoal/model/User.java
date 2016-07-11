@@ -9,10 +9,19 @@ import org.springframework.stereotype.Component;
 public class User {
   private String firstName;
   private String lastName;
+  private String email;
   private String sex;
   private String password;
   private String country;
   private String notes;
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
   public String getNotes() {
     return notes;
@@ -67,6 +76,7 @@ public class User {
     return "User{" +
         "firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
+        ", email='" + email + '\'' +
         ", sex='" + sex + '\'' +
         ", password='" + password + '\'' +
         ", country='" + country + '\'' +
