@@ -8,6 +8,17 @@
                 http://www.springframework.org/schema/context
                 http://www.springframework.org/schema/context/spring-context.xsd">
 
+  <!--messages-->
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basename" value="messages"/>
+    <property name="defaultEncoding" value="UTF-8"/>
+  </bean>
+
+  <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+    <property name="defaultLocale" value="ru_RU"/>
+  </bean>
+
+
   <context:property-placeholder location="classpath:/mail.properties"/>
 
   <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
@@ -29,6 +40,7 @@
     <property name="from" value="java.bakigoal@gmail.com"/>
     <property name="subject" value="Spring Reference Guide"/>
   </bean>
+
   <bean id="mailManager" class="com.bakigoal.mail.SimpleMailManager">
     <property name="mailSender" ref="mailSender"/>
     <property name="templateMessage" ref="templateMessage"/>
