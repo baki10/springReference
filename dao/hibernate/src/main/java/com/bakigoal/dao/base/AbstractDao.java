@@ -53,7 +53,7 @@ public abstract class AbstractDao {
 
   public <E> E findById(Class<E> entityClass, Serializable id) {
     try {
-      return (E) getSession().get(entityClass, id);
+      return getSession().get(entityClass, id);
     } catch (ObjectNotFoundException e) {
       return null;
     }
